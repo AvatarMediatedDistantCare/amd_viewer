@@ -148,34 +148,12 @@ loader.load("model/kinect_banaoh.js", function(geometry, mats) {
 //====================
   var motion = "zenkutsu";
   var side   = "side";
-  // filename[0] = "../datas/raw_datas/experiment/dataset/predicts/ki_crossing_arms_back.csv";
-  // filename[1] = "../../../../Share";
-  filename[0] = "../datas/experiments/X_test_ki_"+ motion +"_"+ side +"_experiment_normalized.csv";
-  // filename[0] = "../datas/experiments/only_datas/X_test_ki_"+ motion +"_"+ side +"_experiment_only_7degree_normalized.csv";
-  // filename[0] = "../datas/raw_datas/experiment/dataset/predicts/ki_"+ motion +"_"+ side +".csv";
-  filename[1] = "../datas/experiments/4s_datas/X_test_ki_"+ motion +"_"+ side +"_experiment_only_7degree_2nd_3rd_normalized.csv";
-  filename[2] = "../datas/raw_datas/experiment/dataset/predicts/mo_"+ motion +"_"+ side +".csv";
 
-  // filename[1] = "../datas/experiments/X_test_ki_" + motion + "_" + side + "_experiment_moving_averaged_using_spine_qua_3contexts.csv";
-
-  // filename[0] = "../datas/experiments/X_test_ki_" + motion + "_" + side + "_experiment_moving_averaged_using_spine_qua_3contexts.csv";
-  // filename[1] = "../datas/experiments/X_test_ki_" + motion + "_" + side + "_experiment_moving_averaged_using_all_bone_joints_qua_3contexts.csv";
-  // filename[2] = "../datas/experiments/X_test_ki_" + motion + "_" + side + "_experiment_only_3degree_moving_averaged_using_spine_qua_3contexts.csv";
-  // filename[3] = "../datas/experiments/X_test_ki_" + motion + "_" + side + "_experiment_only_3degree_moving_averaged_using_all_bone_joints_qua_3contexts.csv";
-  // filename[4] = "../datas/experiments/X_test_ki_" + motion + "_" + side + "_experiment_nrand_moving_averaged_using_spine_qua_3contexts.csv";
-  // filename[5] = "../datas/experiments/X_test_ki_" + motion + "_" + side + "_experiment_nrand_moving_averaged_using_all_bone_joints_qua_3contexts.csv";
-
-//====================
-
-  // filename[0] = "../datas/experiments/X_test_ki_crossing_arms_front_experiment_moving_averaged_21contexts.csv";
-  // filename[1] = "../datas/experiments/X_test_ki_crossing_arms_front_experiment_nrand_moving_averaged_21contexts.csv";
-  // filename[2] = "../datas/raw_datas/experiment/dataset/predicts/mo_crossing_arms_front.csv";
-
-
-  // (2) motionデータの読み込み
-  for (var i = 0; i < motion_data.length; i++) {
-    motion_data[i] = load_csv(filename[i]);
-  }
+  motion_data[0] = load_csv("data/kinect/ki_hands_up_front_splitted.csv");
+  motion_data[0] = motion_data[0].slice(20, motion_data[0].length);
+  motion_data[1] = load_csv("data/predict/ki_hands_up_front_splitted_predict_apply_normalize.csv");
+  motion_data[2] = load_csv("data/mocap/mo_hands_up_front_splitted.csv");
+  motion_data[2] = motion_data[2].slice(20, motion_data[2].length);
   
   kinect_data = load_csv(filename[0]);
   test_data = load_csv(filename[2]);

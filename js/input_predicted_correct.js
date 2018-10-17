@@ -143,12 +143,10 @@ loader.load("model/50s_politician4v2_noglow.js", function(geometry, mats) {
   // motion_data[2] = load_csv("data/mocap/mo_crossing_arms_back_splitted.csv");
 
   motion_data[0] = load_csv("data/kinect/ki_hands_up_front_splitted.csv");
+  motion_data[0] = motion_data[0].slice(20, motion_data[0].length);
   motion_data[1] = load_csv("data/predict/ki_hands_up_front_splitted_predict_apply_normalize.csv");
   motion_data[2] = load_csv("data/mocap/mo_hands_up_front_splitted.csv");
-
-  console.log(motion_data[0]);
-  console.log(motion_data[1]);
-  console.log(motion_data[2]);
+  motion_data[2] = motion_data[2].slice(20, motion_data[2].length);
   
 
   // (3) frameの長さを合わせる

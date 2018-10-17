@@ -64,4 +64,9 @@ this creates three files _apply_normalize.csv, _apply_one_euro_filter.csv, and \
 
 ### 3. 描画
 - change filenames to visualize in input_predicted_correct.js
-- start server and access to index.html
+- start server and access to viewer.html
+
+### 4. 評価
+- change filenames to visualize in quantitative_evaluation.js
+- set num_of_joints (16 or 25) in quantitative_evaluation.js
+- start server and access to evaluation.html
